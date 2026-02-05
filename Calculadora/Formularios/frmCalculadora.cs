@@ -32,9 +32,18 @@ namespace Calculadora
                 int A = 0, B = 0, resultado = 0;
                 A = Convert.ToInt32(txtVariableA.Text);
                 B = int.Parse(txtVariableB.Text);
-                resultado = A + B;
 
-                MessageBox.Show("El resultado es: " + resultado.ToString(), "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (rbdSuma.Checked)
+                    resultado = A + B;
+                if (rbdResta.Checked)
+                    resultado = A - B;
+                if (rbdMultiplicacion.Checked)
+                    resultado = A * B;
+                if (rbdDivision.Checked)
+                    resultado = A * B;
+
+
+                    MessageBox.Show("El resultado es: " + resultado.ToString(), "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Reset();
             }
             catch (Exception)
@@ -47,13 +56,33 @@ namespace Calculadora
         private void btnReset_Click(object sender, EventArgs e)
         {
             Reset();
-            
+
         }
         private void Reset()
         {
             txtVariableA.Text = "";
             txtVariableB.Clear();
             txtVariableA.Focus();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton6_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

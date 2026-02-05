@@ -1,3 +1,5 @@
+using Calculadora.Formularios;
+
 namespace Calculadora
 {
     public partial class frmMenu : Form
@@ -5,6 +7,34 @@ namespace Calculadora
         public frmMenu()
         {
             InitializeComponent();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void calculadoraSimpleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCalculadora calculadoraSimple = new frmCalculadora();
+            calculadoraSimple.Show();
+        }
+
+        private void ordenamientosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void burbujaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBurbuja burbuja = new frmBurbuja();
+            burbuja.Show();
+        }
+
+        private void registroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Registros registros = new Registros();
+            registros.Show();
         }
     }
 }
