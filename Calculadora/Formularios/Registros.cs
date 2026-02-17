@@ -39,7 +39,25 @@ namespace Calculadora.Formularios
             {
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = listaPersonas;
+                verificarRegistros();
             }
+        }
+        private void verificarRegistros()
+        {
+            if (listaPersonas.Count == 0)
+            {
+                btnEliminar.Enabled = false;
+            }
+            else
+                btnEliminar.Enabled = true;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            listaPersonas.RemoveAt(dataGridView1.CurrentRow.Index);
+            dataGridView1.DataSource = null; // limpiar el datasource para que se refresque
+            dataGridView1.DataSource = listaPersonas; // volver a asignar el datasource para mostrar los cambios    
+            verificarRegistros();
         }
     }
 }
